@@ -18,6 +18,19 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
+//if ( Auth::check() && Auth::user()->user_type == 'admin')
+//{
+//    Route::get('/admin', 'HomeController@index')->name('home');
+//}
+//elseif (Auth::check() && Auth::user()->user_type == 'lecturer')
+//{
+//    Route::get('/lecturer', 'HomeController@index')->name('home');
+//}
+//elseif (Auth::check() && Auth::user()->user_type == 'student')
+//{
+//    Route::get('/student', 'HomeController@index')->name('home');
+//}
+
 //admin pages
 Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function()
 {
